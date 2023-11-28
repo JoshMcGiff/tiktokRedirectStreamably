@@ -15,7 +15,7 @@
     // Send the authorization code back to the main window
     window.opener.postMessage(
     { type: 'authorization_complete', authCode },
-      window.opener.location.origin
+      'https://localhost:180/tellus'
     );
 
 
