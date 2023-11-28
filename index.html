@@ -11,16 +11,16 @@
     // Extract the authorization code from the URL
     const urlSearchParams = new URLSearchParams(window.location.search);
     const authCode = urlSearchParams.get('code');
-
+    
     // Send the authorization code back to the main window
     window.opener.postMessage(
     { type: 'authorization_complete', authCode },
       'https://localhost:180/tellus'
     );
 
-
+    console.log(authCode);
     // Close the popup window
-    window.close();
+    //window.close();
   </script>
 </body>
 </html>
