@@ -11,12 +11,22 @@
     // Extract the authorization code from the URL
     const urlSearchParams = new URLSearchParams(window.location.search);
     const authCode = urlSearchParams.get('code');
-    
-    // Send the authorization code back to the main window
-    window.opener.postMessage(
-    { type: 'authorization_complete', authCode },
-      'https://localhost:180/tellus'
-    );
+    const state = urlSearchParams.get('state');
+
+    if(state === "17kb99zf3yn"){
+      // Send the authorization code back to the main window
+      window.opener.postMessage(
+      { type: 'authorization_complete', authCode },
+        'https://dev.super-stream/tellus'
+      );
+    }
+    else{
+      // Send the authorization code back to the main window
+      window.opener.postMessage(
+      { type: 'authorization_complete', authCode },
+        'https://super-stream/tellus'
+      );
+    }
 
     console.log(authCode);
     // Close the popup window
