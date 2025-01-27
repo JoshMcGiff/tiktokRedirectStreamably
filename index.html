@@ -17,14 +17,14 @@
       // Send the authorization code back to the main window
       window.opener.postMessage(
       { type: 'authorization_complete', authCode },
-        'https://dev.super-stream/tellus'
+        'https://dev.super-stream/showcase' + window.location.search
       );
     }
     else{
       // Send the authorization code back to the main window
       window.opener.postMessage(
       { type: 'authorization_complete', authCode },
-        'https://super-stream/tellus'
+        'https://super-stream/showcase' + window.location.search
       );
     }
 
