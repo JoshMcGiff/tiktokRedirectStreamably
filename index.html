@@ -14,18 +14,14 @@
     const state = urlSearchParams.get('state');
 
     if(state === "17kb99zf3yn"){
+      console.log("testing");
       // Send the authorization code back to the main window
-      window.opener.postMessage(
-      { type: 'authorization_complete', authCode },
-        'https://dev.super-stream/showcase' + window.location.search
-      );
+      window.location.href =         'https://dev.super-stream/showcase' + window.location.search;
     }
     else{
+      console.log("live");
       // Send the authorization code back to the main window
-      window.opener.postMessage(
-      { type: 'authorization_complete', authCode },
-        'https://super-stream/showcase' + window.location.search
-      );
+      window.location.href =         'https://super-stream/showcase' + window.location.search;
     }
 
     console.log(authCode);
